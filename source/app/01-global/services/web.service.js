@@ -15,8 +15,21 @@ app.factory('WebService', ['$http', '$cookies', function( $http, $cookies ){
     });
   }
 
+  /**
+   * Busca repositórios
+   * @params {string}   user
+   * @params {function} callback
+   * Doc: https://developer.github.com/v3/repos/#list-your-repositories
+   */
+  function getRepoUser( callback ){
+    return $http.get( _url + 'users/' + _user + '/repos' ).then( function success( res ) {
+      callback( res.data );
+    });
+  }
+
   var service = {
-    getDataUser: getDataUser
+    getDataUser: getDataUser,
+    getRepoUser: getRepoUser
   }
 
   return service;

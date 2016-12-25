@@ -1,0 +1,33 @@
+<div ng-controller="ReposController as ctrl">
+  
+  <h2 class="title-page">repositórios</h2>
+
+  <article class="repo-box" ng-repeat="repo in ctrl.repos">
+    
+    <div class="labels">
+
+      <div class="label-item">
+        <i class="zmdi zmdi-label-alt"></i> {{ repo.language }}
+      </div>
+
+      <div class="label-item">
+        <i class="zmdi zmdi-star"></i> {{ repo.stargazers_count }}
+      </div>
+
+      <div class="label-item">
+        <i class="zmdi zmdi-copy"></i> {{ repo.forks_count }}
+      </div>
+      
+    </div><!-- End .tags -->
+
+    <h3 class="title">{{ repo.name }}</h3>
+    
+    <a href="{{ repo.html_url }}" class="link-text" target="_blank">{{ repo.html_url }}</a>
+    
+    <p class="description">{{ repo.description }}</p>
+
+    <a href="{{ repo.homepage }}" class="btn" target="_blank" ng-if=" repo.has_pages && repo.homepage "><i class="zmdi zmdi-eye"></i> {{ repo.homepage }}</a>
+
+  </article><!-- End .repo-box -->
+
+</div>

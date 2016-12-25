@@ -8,7 +8,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
   $stateProvider
     .state('repositories', {
       url: '/',
-      templateUrl: 'app/03-templates/repositories/repositories.html'
+      templateUrl: 'public/app/03-templates/repositories/repositories.html'
     })
   
 }]);

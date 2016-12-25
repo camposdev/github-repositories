@@ -7,9 +7,6 @@ app.run(['$cookies', '$http', function( $cookies, $http ){
     $cookies.put('userDefault', 'camposdev' );
   }
 
-  // Autorização para acesso a API
-  $http.defaults.headers.common.Authorization = 'Basic 2215e815067099f28eb1cacf703d1020320d36d4';
-
 }]);
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function( $stateProvider, $urlRouterProvider, $locationProvider ) {
 
@@ -21,7 +18,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
   $stateProvider
     .state('repositories', {
       url: '/',
-      templateUrl: 'app/03-templates/repositories/repositories.html'
+      templateUrl: 'public/app/03-templates/repositories/repositories.html'
     })
   
 }]);

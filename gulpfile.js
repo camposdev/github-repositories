@@ -108,7 +108,7 @@ gulp.task( 'build', function() {
 
 
 gulp.task( 'server', function() {
-	gulp.src( 'public/' )
+	gulp.src( './' )
 		.pipe( webserver({
 			livereload: true
 		}) );

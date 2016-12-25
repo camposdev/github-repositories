@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App"> 
+<head>
+  <meta charset="UTF-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ReposiStories</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/vendors.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <!-- <link rel="stylesheet" href="app/assets/css/all.min.css"> -->
+</head>
+<body>
+
+  <header class="header-app">
+    <div class="container-app">
+      
+      <div class="column -aside">
+        
+        <div class="brand-header">
+          <a href="#" class="link">
+            <h1 class="brand">repo<b>stories</b></h1>
+          </a>
+        </div>
+
+      </div><!-- End .column -aside -->
+      <div class="column -content">
+        
+        <form action="#" class="form-search">
+          <div class="form-group">
+            <input type="text" class="field" placeholder="Buscar repositório...">
+            <button type="submit" class="action -search"><i class="zmdi zmdi-search"></i></button>
+          </div>
+        </form>
+
+      </div><!-- End .column -content -->
+
+    </div>
+  </header><!-- End .column -content --> 
+  
+  <section class="container-app">
+
+    <aside class="column -aside">
+      
+      <div ng-include=" 'app/02-contents/sidebar/sidebar.html' "></div>
+
+    </aside>
+    
+    <article class="column -content">
+      <div ui-view></div>
+    </article>
+
+  </section><!-- End .container-app -->
+  
+  <script src="assets/js/vendors.js"></script>
+  <script src="assets/js/app.js"></script>
+  <!-- <script src="app/assets/js/all.min.js"></script> -->
+</body>
+</html>

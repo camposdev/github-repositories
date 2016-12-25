@@ -1,0 +1,29 @@
+.btn 
+  flexbox inline-flex
+  align-items center
+  justify-content center
+  width auto
+  height 40px
+  padding 0 20px
+  font-size 1.6rem
+  color white
+  background-color transparent
+  border 1px solid $purple
+  rounded 30px
+  transition .3s
+  &:hover 
+    background-color $purple - 80%
+    border-color $purpleLight
+
+  > .zmdi 
+    font-size 2.2rem
+    margin-right 10px
+  
+  &.-lg
+    font-size 2rem
+    height 50px
+  &.-lg > .zmdi
+    font-size 2.4rem
+  
+  &.-block
+    width 100%

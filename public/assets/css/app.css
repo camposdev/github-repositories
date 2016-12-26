@@ -157,6 +157,7 @@
 }
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 .link-text {
   display: -webkit-inline-flex;
@@ -172,6 +173,74 @@ a {
   font-size: 3rem;
   font-weight: 300;
   margin: 0 0 20px;
+}
+.directories-box {
+  background-color: #0b0b0b;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 15px 0;
+}
+.directories-box > .item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 7px 20px;
+  font-size: 1.6rem;
+  color: #adadad;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.directories-box > .item > .zmdi {
+  width: 20px;
+}
+.directories-box > .item.-dir {
+  color: #30c2d5;
+}
+.directories-box > .item:hover {
+  background-color: #161616;
+}
+.readme-content {
+  background-color: #121212;
+  margin-top: 20px;
+  padding: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  color: #adadad;
+}
+.readme-content a {
+  color: #30c2d5;
+  text-decoration: underline;
+}
+.readme-content a:hover {
+  text-decoration: none;
+}
+.readme-content img {
+  max-width: 100%;
+  height: auto;
+}
+.readme-content pre {
+  background-color: #2d2d2d;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  width: 100%;
+  padding: 15px;
 }
 .repo-box {
   position: relative;
@@ -205,10 +274,24 @@ a {
   font-weight: 700;
   margin: 10px 0;
 }
+.repo-box > .title > a {
+  color: #fff;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.repo-box > .title > a:hover {
+  text-decoration: underline;
+}
 .repo-box > .link-text {
   font-weight: 300;
   font-size: 1.4rem;
   font-style: italic;
+}
+.repo-box.-header:before {
+  display: none;
 }
 .form-group > .action.-search {
   position: absolute;
@@ -277,6 +360,32 @@ a {
 }
 .profile-actions > .btn {
   margin-bottom: 15px;
+}
+.owner-repository {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 0 20px;
+}
+.owner-repository > .photo {
+  width: 50px;
+  height: 50px;
+}
+.owner-repository > .photo > img {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.owner-repository > .name {
+  font-size: 1.8rem;
+  margin: 0 0 0 10px;
 }
 html {
   font-size: 62.5%;

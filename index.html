@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="public/assets/css/app.css">
   <!-- <link rel="stylesheet" href="public/assets/css/all.min.css"> -->
 </head>
-<body>
+<body ng-cloak>
 
   <header class="header-app">
     <div class="container-app">
@@ -19,7 +19,7 @@
       <div class="column -aside">
         
         <div class="brand-header">
-          <a href="#" class="link">
+          <a href="" class="link">
             <h1 class="brand">repo<b>stories</b></h1>
           </a>
         </div>
@@ -39,20 +39,10 @@
     </div>
   </header><!-- End .column -content --> 
   
-  <section class="container-app">
-
-    <aside class="column -aside">
-      <div ng-include=" 'public/app/02-contents/sidebar/sidebar.html' "></div>
-    </aside>
-    
-    <article class="column -content">
-      <div ui-view></div>
-    </article>
-
-  </section><!-- End .container-app -->
+  <div ui-view></div>
 
   <footer class="footer-app">
-    <p>2017 - Felipe Campos</p>
+    <p><a href="https://github.com/camposdev" class="link-text">Felipe Campos</a></p>
   </footer>
   
   <script src="public/assets/js/vendors.js"></script>

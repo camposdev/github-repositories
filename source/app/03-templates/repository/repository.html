@@ -1,0 +1,41 @@
+<article ng-controller="RepositoryController as ctrl">
+  
+  <header class="repo-box -header">
+    <div class="owner-repository" ng-if="ctrl.user != ctrl.owner.login">
+      <div class="photo">
+        <img ng-src="{{ ctrl.owner.avatar_url }}" alt="{{ ctrl.owner.login }}">
+      </div>
+
+      <h4 class="name">por <a href="{{ ctrl.owner.html_url }}" class="link-text" target="_blank">{{ ctrl.owner.login }}</a></h4>
+    </div>
+    
+    <div class="labels">
+      <div class="label-item">
+        <i class="zmdi zmdi-label-alt"></i> {{ ctrl.repository.language }}
+      </div>
+
+      <div class="label-item">
+        <i class="zmdi zmdi-star"></i> {{ ctrl.repository.stargazers_count }}
+      </div>
+
+      <div class="label-item">
+        <i class="zmdi zmdi-copy"></i> {{ ctrl.repository.forks_count }}
+      </div>
+    </div><!-- End .tags -->
+
+    <h3 class="title">{{ ctrl.repository.name }}</h3>
+    <a href="{{ ctrl.repository.html_url }}" class="link-text" target="_blank">{{ ctrl.repository.html_url }}</a>
+    <p class="description">{{ ctrl.repository.description }}</p>
+    <a href="{{ ctrl.repository.homepage }}" class="btn" target="_blank" ng-if=" ctrl.repository.has_pages && ctrl.repository.homepage "><i class="zmdi zmdi-eye"></i> {{ ctrl.repository.homepage }}</a>
+  </header><!-- End .repo-box -->
+
+  <div class="directories-box">
+    <div class="item" ng-repeat="path in ctrl.path" ng-class="{ '-file': path.type == 'file', '-dir': path.type == 'dir' }">
+      <i class="zmdi" ng-class="{ 'zmdi-file': path.type == 'file', 'zmdi-folder': path.type == 'dir' }"></i> {{ path.path }}
+    </div>
+  </div><!-- End .directories-box -->
+
+  <div class="readme-content">
+    <div ng-bind-html="ctrl.readme"></div>
+  </div>
+</article>

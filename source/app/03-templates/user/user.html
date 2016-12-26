@@ -1,4 +1,4 @@
-<div ng-controller="ReposController as ctrl">
+<div ng-controller="UserController as ctrl">
   
   <h2 class="title-page">repositórios</h2>
 
@@ -20,7 +20,7 @@
       
     </div><!-- End .tags -->
 
-    <h3 class="title">{{ repo.name }}</h3>
+    <h3 class="title"><a ui-sref="default.repository({ user: ctrl.user, repository: repo.name })">{{ repo.name }}</a></h3>
     
     <a href="{{ repo.html_url }}" class="link-text" target="_blank">{{ repo.html_url }}</a>
     

@@ -1,14 +1,13 @@
-app.controller('SidebarController', ['WebService', '$cookies', '$window', function( WebService, $cookies, $window ){
+app.controller('SidebarController', ['WebService', '$cookies', '$window', '$state', '$stateParams', function( WebService, $cookies, $window, $state, $stateParams ){
   
   var vm = this;
 
-  WebService.getDataUser( function( res ) {
+  WebService.getDataUser( $stateParams.user, function( res ) {
     vm.user = res;
   });
 
-  vm.changeUser = function( user ) {
-    $cookies.put('userDefault', user );
-    $window.location.reload();
+  vm.changeUser = function( username ) {
+    $state.go( '.', { user: username }, {reload: true} );
   }
 
 }]);

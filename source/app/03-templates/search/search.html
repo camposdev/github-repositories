@@ -1,12 +1,13 @@
-<div ng-controller="UserController as ctrl">
-  
-  <h2 class="title-page">repositórios</h2>
+<div ng-controller="SearchController as ctrl">
+  <h2 class="title-page">resultados de <span class="label">{{ ctrl.term }}</span></h2>
 
-  <article class="repo-box" ng-repeat="repo in ctrl.repos">
-    
+  <article class="repo-box" ng-repeat="repo in ctrl.results">
     <div class="labels">
+      <div class="label-item -owner">
+        <img ng-src="{{ repo.owner.avatar_url }}" class="photo" alt="{{ repo.owner.login }}">{{ repo.owner.login }}
+      </div>
 
-      <div class="label-item">
+      <div class="label-item" ng-if="repo.language">
         <i class="zmdi zmdi-label-alt"></i> {{ repo.language }}
       </div>
 
@@ -17,17 +18,15 @@
       <div class="label-item">
         <i class="zmdi zmdi-copy"></i> {{ repo.forks_count }}
       </div>
-      
     </div><!-- End .tags -->
 
-    <h3 class="title"><a ui-sref="default.repository({ user: ctrl.user, repository: repo.name })">{{ repo.name }}</a></h3>
-    
+    <h3 class="title"><a ui-sref="repository({ user: repo.owner.login, repository: repo.name })">{{ repo.name }}</a></h3>
     <a href="{{ repo.html_url }}" class="link-text" target="_blank">{{ repo.html_url }}</a>
-    
     <p class="description">{{ repo.description }}</p>
-
     <a href="{{ repo.homepage }}" class="btn" target="_blank" ng-if=" repo.has_pages && repo.homepage "><i class="zmdi zmdi-eye"></i> {{ repo.homepage }}</a>
-
   </article><!-- End .repo-box -->
 
+  <div class="alert-message" ng-if="!ctrl.results.length">
+    Nenhum repositório encontrado!
+  </div>
 </div>

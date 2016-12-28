@@ -1,14 +1,31 @@
 .container-app
-  width $w-container
+  width 1200px
   margin 0 auto
   flexbox flex
   align-items start
+  @media ( max-width 1220px )
+    width 990px
+  @media ( max-width 1010px )
+    width 750px
+  @media ( max-width 770px )
+    width 100%
+    padding 0 20px
+    flex-direction column
   > .column
     &.-aside
-      width $w-aside
+      width 25%
+      @media ( max-width 1110px )
+        width 30%
+      @media ( max-width 770px )
+        width 100%
     &.-content
-      width $w-content
+      width 75%
       padding-left 30px
+      @media ( max-width 1110px )
+        width 70%
+      @media ( max-width 770px )
+        width 100%
+        padding-left 0
 
 * 
   box-sizing border-box

@@ -1,17 +1,31 @@
 .profile-sidebar
+  position relative
   text-align center
+  @media ( max-width 770px )
+    flexbox flex
+    align-items center
+    margin-bottom 100px
 
 .profile-photo
   margin 0 0 10px
   padding 0 30px
+  @media ( max-width 770px )
+    margin 0
+    padding 0
   > .photo 
     width 100%
     height auto
     rounded 50%
+    @media ( max-width 770px )
+      width 80px
 
 .profile-info
   margin 0 0 20px
   text-align center
+  @media ( max-width 770px )
+    text-align left
+    margin 0
+    padding-left 10px
   > .name 
     margin 0
     font-size 1.8rem
@@ -24,5 +38,11 @@
 
 .profile-actions
   margin 0 0 15px
+  @media ( max-width 770px )
+    position absolute
+    width 100%
+    bottom -90px
   > .btn
     margin-bottom 15px
+    @media ( max-width 770px )
+      width 100%

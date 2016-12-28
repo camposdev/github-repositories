@@ -1,5 +1,4 @@
 <div class="profile-sidebar" ng-controller="SidebarController as ctrl">
-  
   <div class="profile-photo">
     <img ng-src="{{ctrl.user.avatar_url}}" class="photo" alt="">
   </div>
@@ -10,10 +9,7 @@
   </div>
 
   <div class="profile-actions">
-    <a href="#" class="btn -lg -block"><i class="zmdi zmdi-storage"></i> {{ ctrl.user.public_repos }} repositórios</a>
-    <a href="#" class="btn -lg -block"><i class="zmdi zmdi-code-setting"></i> {{ ctrl.user.public_gists }} gists</a>
+    <a ui-sref="home" class="btn -lg -block"><i class="zmdi zmdi-storage"></i> {{ ctrl.user.public_repos }} repositórios</a>
+    <!-- <a class="btn -lg -block"><i class="zmdi zmdi-code-setting"></i> {{ ctrl.user.public_gists }} gists</a> -->
   </div>
-
-  <a href="" class="link-text" ng-click="ctrl.changeUser('octocat')">alterar usuário</a>
-
 </div>

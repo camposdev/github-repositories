@@ -1,0 +1,18 @@
+<div class="container-app" ng-controller="HeaderController as ctrl">
+  <div class="column -aside">
+    <div class="brand-header">
+      <a ui-sref="home" class="link">
+        <h1 class="brand">repo<b>stories</b></h1>
+      </a>
+    </div>
+  </div><!-- End .column -aside -->
+
+  <div class="column -content">
+    <form name="ctrl.form" class="form-search" ng-submit="ctrl.search(ctrl.form)" novalidate>
+      <div class="form-group">
+        <input type="text" name="term" ng-model="ctrl.term" class="field" minlength="3" placeholder="Buscar repositório..." required>
+        <button type="submit" class="action -search"><i class="zmdi zmdi-search"></i></button>
+      </div>
+    </form>
+  </div><!-- End .column -content -->
+</div>
